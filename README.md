@@ -38,6 +38,7 @@ docker build -t dwimberger/alpine-qr .
 ```
 
 
+```
 #!/bin/sh
 
 #Run like this
@@ -45,3 +46,4 @@ set -e
 if [ ! -f IMG.jpg ] ; then echo "The image file to convert doesn't exist!" && exit 1 ; fi
 docker build -t zxing .
 docker run --net=none -v $PWD/IMG.jpg:/IMG.jpg --rm zxing --try_harder file:///IMG.jpg
+```
